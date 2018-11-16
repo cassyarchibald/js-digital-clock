@@ -1,7 +1,11 @@
-let timeNow = new Date();
-let hours = timeNow.getHours();
-let minutes = timeNow.getMinutes();
-let seconds = timeNow.getSeconds();
-let day = timeNow.getDay();
-let month = timeNow.getMonth();
-let year = timeNow.getFullYear();
+$(document).ready(function() {
+  const getTime = function getTime() {
+    let date = new Date();
+    let time = date.toLocaleTimeString();
+    // return time;
+    $("#clock").empty();
+    $("#clock").append(time);
+  };
+
+  let timer = setInterval(getTime, 1000);
+});
